@@ -52,13 +52,13 @@ export const PROJECTS: readonly Project[] = [
     displayUrl: "shortreal.ai",
   },
   {
-    name: "ShortReal AI Ad",
-    status: "Live in production",
+    name: "TailorAd",
+    status: "Launching soon",
     description:
       "AI still-image ad creative studio. Product photos in, scroll-stopping ad stills out, tuned for paid social.",
     stack: ["Next.js", "Replicate", "fal.ai"],
-    href: "https://shortreal.ai/ad",
-    displayUrl: "shortreal.ai/ad",
+    href: "https://tailoredad.com",
+    displayUrl: "tailoredad.com",
   },
 ] as const;
 
