@@ -57,7 +57,7 @@ export function Hero() {
               width={640}
               height={640}
               priority
-              className="relative aspect-square w-full rounded-2xl border border-zinc-200 object-cover dark:border-white/15"
+              className="relative aspect-square w-full rounded-2xl border border-zinc-200 object-cover object-top dark:border-white/15"
             />
             <figcaption className="relative mt-3 font-mono text-xs text-zinc-500 dark:text-zinc-400">
               {SITE.name}
