@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  color-scheme: light;
+}
+
+.dark {
+  color-scheme: dark;
+}
+
+@theme inline {
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+::selection {
+  background: rgb(52 211 153 / 0.35);
+}
+
+:focus-visible {
+  outline: 2px solid rgb(4 120 87);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.dark :focus-visible {
+  outline-color: rgb(52 211 153);
+}
+
+/* Adaptive grid pattern. Takes its line color from the element's text color. */
+.bg-grid {
+  background-image:
+    linear-gradient(
+      to right,
+      color-mix(in srgb, currentColor 9%, transparent) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      to bottom,
+      color-mix(in srgb, currentColor 9%, transparent) 1px,
+      transparent 1px
+    );
+  background-size: 28px 28px;
+}
