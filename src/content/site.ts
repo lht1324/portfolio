@@ -1,7 +1,7 @@
 export const SITE = {
   name: "Jaeho Lee",
   url: "https://jaeholee.xyz",
-  email: "lht1324@gmail.com",
+  email: "contact@jaeholee.xyz",
   location: "Seoul, South Korea",
   role: "Freelance developer for AI products",
   github: "https://github.com/lht1324",
