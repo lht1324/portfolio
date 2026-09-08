@@ -9,22 +9,22 @@ const STEPS = [
   {
     index: "02",
     title: "Fixed quote",
-    body: "Scope, timeline, and one price in writing. If the fit is wrong, I will tell you on the call.",
+    body: "Scope, timeline, and one price in writing. If the fit is wrong, I will tell you in writing.",
   },
   {
     index: "03",
     title: "Build and handoff",
-    body: "Weekly demos from a clean repo. Docs included. You own all of it when we ship.",
+    body: "Weekly demos from a clean repo. Docs included. You own all of it at handoff.",
   },
 ] as const;
 
 export function ProcessSection() {
   return (
-    <section id="process" className="scroll-mt-24 px-4 py-20 sm:px-6 md:min-h-[calc(100dvh-4rem)] md:py-28">
+    <section id="process" className="scroll-mt-24 px-4 py-20 sm:px-6 md:py-24">
       <div className="mx-auto w-full max-w-7xl">
         <Reveal>
           <h2 className="max-w-xl text-3xl font-semibold tracking-tighter sm:text-4xl">
-            How we&apos;ll work
+            How I work
           </h2>
           <p className="mt-3 max-w-[60ch] leading-relaxed text-zinc-600 dark:text-zinc-400">
             Short process, fixed price, no surprises.

@@ -1,21 +1,22 @@
 import {
-  EnvelopeSimple,
-  GithubLogo,
-  LinkedinLogo,
-  XLogo,
+  EnvelopeSimpleIcon,
+  GithubLogoIcon,
+  LinkedinLogoIcon,
+  XLogoIcon,
 } from "@phosphor-icons/react/dist/ssr";
 import { CTA_LABEL, MAILTO, SITE } from "@/content/site";
+import { BriefFormMock } from "@/components/main/BriefFormMock";
 import { Reveal } from "@/components/reveal";
 
 const SOCIALS = [
-  { label: "GitHub", href: SITE.github, icon: GithubLogo },
-  { label: "LinkedIn", href: SITE.linkedin, icon: LinkedinLogo },
-  { label: "X", href: SITE.x, icon: XLogo },
+  { label: "GitHub", href: SITE.github, icon: GithubLogoIcon },
+  { label: "LinkedIn", href: SITE.linkedin, icon: LinkedinLogoIcon },
+  { label: "X", href: SITE.x, icon: XLogoIcon },
 ] as const;
 
 export function ContactSection() {
   return (
-    <section id="contact" className="scroll-mt-24 px-4 py-20 sm:px-6 md:py-28">
+    <section id="contact" className="scroll-mt-24 px-4 py-16 sm:px-6 md:py-24">
       <div className="mx-auto w-full max-w-3xl text-center">
         <Reveal>
           <h2 className="text-3xl font-semibold tracking-tighter sm:text-4xl">
@@ -37,7 +38,7 @@ export function ContactSection() {
               href={MAILTO}
               className="flex items-center gap-2 font-mono text-sm text-zinc-600 transition-colors hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-white"
             >
-              <EnvelopeSimple size={16} />
+              <EnvelopeSimpleIcon size={16} />
               {SITE.email}
             </a>
           </div>
@@ -56,6 +57,9 @@ export function ContactSection() {
               </li>
             ))}
           </ul>
+          <div className="mx-auto mt-12 w-full max-w-2xl text-left">
+            <BriefFormMock />
+          </div>
         </Reveal>
       </div>
     </section>

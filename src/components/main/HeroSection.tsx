@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { ArrowRight } from "@phosphor-icons/react/dist/ssr";
+import { ArrowRightIcon } from "@phosphor-icons/react/dist/ssr";
 import { CTA_LABEL, MAILTO, SITE } from "@/content/site";
 import { Reveal } from "@/components/reveal";
 
@@ -37,7 +37,7 @@ export function HeroSection() {
               className="group flex h-12 items-center justify-center gap-1.5 rounded-full border border-zinc-300 px-7 text-sm font-medium transition-colors hover:border-zinc-500 active:translate-y-[1px] dark:border-white/20 dark:hover:border-white/50"
             >
               See selected work
-              <ArrowRight
+              <ArrowRightIcon
                 size={16}
                 className="transition-transform group-hover:translate-x-0.5"
               />

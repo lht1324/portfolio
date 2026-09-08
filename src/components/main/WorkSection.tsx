@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { ArrowUpRight, X } from "@phosphor-icons/react";
+import { ArrowUpRightIcon, XIcon } from "@phosphor-icons/react";
 import { CTA_LABEL, MAILTO, PROJECTS, type Project } from "@/content/site";
 import { Reveal } from "@/components/reveal";
 
@@ -61,7 +61,7 @@ function ProjectModal({
           aria-label="Close dialog"
           className="absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-full border border-zinc-200 text-zinc-500 transition-colors hover:text-zinc-900 dark:border-white/15 dark:text-zinc-400 dark:hover:text-white"
         >
-          <X size={17} />
+          <XIcon size={17} />
         </button>
         <p className="font-mono text-xs text-emerald-800 dark:text-emerald-300">
           {project.status}
@@ -146,7 +146,7 @@ export function WorkSection() {
                     >
                       <span className="flex items-center justify-between font-mono text-xs opacity-70">
                         <span>Live site</span>
-                        <ArrowUpRight
+                        <ArrowUpRightIcon
                           size={20}
                           className="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
                         />
@@ -165,7 +165,7 @@ export function WorkSection() {
                     >
                       <span className="flex items-center justify-between font-mono text-xs opacity-70">
                         <span>{project.status}</span>
-                        <ArrowUpRight
+                        <ArrowUpRightIcon
                           size={20}
                           className="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
                         />

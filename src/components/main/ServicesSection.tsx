@@ -1,14 +1,14 @@
 import {
-  CreditCard,
-  FilmStrip,
-  RocketLaunch,
-  Wrench,
+  CreditCardIcon,
+  FilmStripIcon,
+  RocketLaunchIcon,
+  WrenchIcon,
 } from "@phosphor-icons/react/dist/ssr";
 import { Reveal } from "@/components/reveal";
 
 const SERVICES = [
   {
-    icon: Wrench,
+    icon: WrenchIcon,
     title: "AI code rescue",
     body: "Your vibe-coded app works until it doesn't. I review AI-generated code, fix what's broken, and refactor it into a codebase you can maintain.",
     meta: "Code review · Refactoring · Bug fixes",
@@ -16,7 +16,7 @@ const SERVICES = [
     featured: true,
   },
   {
-    icon: FilmStrip,
+    icon: FilmStripIcon,
     title: "AI media pipelines",
     body: "Video and image generation with Replicate and fal.ai. Queues, webhooks, caching, and cost control, wired correctly from day one.",
     meta: "Replicate · fal.ai · Webhooks",
@@ -24,7 +24,7 @@ const SERVICES = [
     featured: false,
   },
   {
-    icon: CreditCard,
+    icon: CreditCardIcon,
     title: "Payments and the hard parts",
     body: "Auth, billing, and subscriptions. The unglamorous work AI tools fumble, done carefully so you actually get paid.",
     meta: "Auth · Billing · Edge cases",
@@ -32,9 +32,9 @@ const SERVICES = [
     featured: false,
   },
   {
-    icon: RocketLaunch,
+    icon: RocketLaunchIcon,
     title: "MVP builds",
-    body: "From idea to launched product. We scope it in writing first, then you get a fixed quote. No hourly fog.",
+    body: "From idea to launched product. I scope it in writing first, then you get a fixed quote. No hourly fog.",
     meta: "Fixed quote after written brief",
     featured: false,
   },
