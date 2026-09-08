@@ -51,15 +51,24 @@ export function Hero() {
               aria-hidden
               className="bg-grid absolute -inset-3 rounded-[20px] text-zinc-900 dark:text-white"
             />
-            <Image
-              src="/pfp.webp"
-              alt={`Portrait of ${SITE.name}`}
-              width={640}
-              height={640}
-              priority
-              sizes="(max-width: 1023px) 90vw, 480px"
-              className="relative aspect-square w-full rounded-2xl border border-zinc-200 object-cover object-top dark:border-white/15"
-            />
+            <a
+              href="/pfp.jpg"
+              target="_blank"
+              rel="noreferrer"
+              aria-label={`Open full-resolution portrait of ${SITE.name} in a new tab`}
+              title="Open full-resolution portrait"
+              className="relative block cursor-zoom-in"
+            >
+              <Image
+                src="/pfp.webp"
+                alt={`Portrait of ${SITE.name}`}
+                width={640}
+                height={640}
+                priority
+                sizes="(max-width: 1023px) 90vw, 480px"
+                className="relative aspect-square w-full rounded-2xl border border-zinc-200 object-cover object-top dark:border-white/15"
+              />
+            </a>
             <figcaption className="relative mt-3 font-mono text-xs text-zinc-500 dark:text-zinc-400">
               {SITE.name}
             </figcaption>
