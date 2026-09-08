@@ -5,7 +5,7 @@ import { Reveal } from "@/components/reveal";
 
 export function Hero() {
   return (
-    <section id="top" className="scroll-mt-24 px-4 pt-24 sm:px-6 md:flex md:min-h-[calc(100dvh-4rem)] md:flex-col md:justify-center md:py-16">
+    <section id="top" className="scroll-mt-24 px-4 pt-24 sm:px-6 md:min-h-[calc(100dvh-4rem)] md:py-16">
       <div className="mx-auto grid w-full max-w-7xl items-center gap-10 lg:grid-cols-12 lg:gap-14">
         <Reveal className="lg:col-span-7">
           <p className="inline-flex items-center gap-2.5 rounded-full border border-zinc-200 py-1.5 pl-3 pr-4 text-xs text-zinc-600 dark:border-white/15 dark:text-zinc-300">

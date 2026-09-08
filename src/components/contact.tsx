@@ -15,7 +15,7 @@ const SOCIALS = [
 
 export function Contact() {
   return (
-    <section id="contact" className="scroll-mt-24 px-4 py-20 sm:px-6 md:flex md:min-h-[calc(100dvh-4rem)] md:flex-col md:justify-center md:py-28">
+    <section id="contact" className="scroll-mt-24 px-4 py-20 sm:px-6 md:py-28">
       <div className="mx-auto w-full max-w-3xl text-center">
         <Reveal>
           <h2 className="text-3xl font-semibold tracking-tighter sm:text-4xl">
