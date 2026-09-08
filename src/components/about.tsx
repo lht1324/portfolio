@@ -15,11 +15,12 @@ export function About() {
         <div className="mt-10 grid gap-10 lg:grid-cols-12 lg:gap-14">
           <Reveal className="lg:col-span-5">
             <Image
-              src="/pfp.jpg"
+              src="/pfp.webp"
               alt={`Portrait of ${SITE.name}`}
               width={640}
-              height={640}
+              height={800}
               loading="lazy"
+              sizes="(max-width: 1023px) 90vw, 480px"
               className="aspect-[4/5] w-full rounded-2xl border border-zinc-200 object-cover dark:border-white/15"
             />
           </Reveal>

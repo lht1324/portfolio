@@ -52,11 +52,12 @@ export function Hero() {
               className="bg-grid absolute -inset-3 rounded-[20px] text-zinc-900 dark:text-white"
             />
             <Image
-              src="/pfp.jpg"
+              src="/pfp.webp"
               alt={`Portrait of ${SITE.name}`}
               width={640}
               height={640}
               priority
+              sizes="(max-width: 1023px) 90vw, 480px"
               className="relative aspect-square w-full rounded-2xl border border-zinc-200 object-cover object-top dark:border-white/15"
             />
             <figcaption className="relative mt-3 font-mono text-xs text-zinc-500 dark:text-zinc-400">
