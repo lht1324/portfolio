@@ -13,7 +13,7 @@ const SOCIALS = [
   { label: "X", href: SITE.x, icon: XLogo },
 ] as const;
 
-export function Contact() {
+export function ContactSection() {
   return (
     <section id="contact" className="scroll-mt-24 px-4 py-20 sm:px-6 md:py-28">
       <div className="mx-auto w-full max-w-3xl text-center">
@@ -22,8 +22,9 @@ export function Contact() {
             Have something AI-adjacent to build?
           </h2>
           <p className="mx-auto mt-4 max-w-[52ch] leading-relaxed text-zinc-600 dark:text-zinc-400">
-            Send one paragraph about what you&apos;re making. I reply within
-            two business days.
+            Send a brief: what you&apos;re making, relevant links, budget range,
+            timeline. Ack within 12 hours, full reply within two business
+            days.
           </p>
           <div className="mt-8 flex flex-col items-center gap-4">
             <a

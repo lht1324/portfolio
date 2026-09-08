@@ -99,11 +99,11 @@ function ProjectModal({
   );
 }
 
-export function Work() {
+export function WorkSection() {
   const [selected, setSelected] = useState<Project | null>(null);
 
   return (
-    <section id="work" className="scroll-mt-24 px-4 py-20 sm:px-6 md:min-h-[calc(100dvh-4rem)] md:py-28">
+    <section id="work" className="scroll-mt-24 px-4 py-20 sm:px-6 md:-mt-[10dvh] md:min-h-[calc(100dvh-4rem)] md:py-28">
       <div className="mx-auto w-full max-w-7xl">
         <Reveal>
           <h2 className="max-w-xl text-3xl font-semibold tracking-tighter sm:text-4xl">

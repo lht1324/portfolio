@@ -20,6 +20,7 @@ const SERVICES = [
     title: "AI media pipelines",
     body: "Video and image generation with Replicate and fal.ai. Queues, webhooks, caching, and cost control, wired correctly from day one.",
     meta: "Replicate · fal.ai · Webhooks",
+    price: "Starting at $1,500",
     featured: false,
   },
   {
@@ -27,18 +28,19 @@ const SERVICES = [
     title: "Payments and the hard parts",
     body: "Auth, billing, and subscriptions. The unglamorous work AI tools fumble, done carefully so you actually get paid.",
     meta: "Auth · Billing · Edge cases",
+    price: "Starting at $900",
     featured: false,
   },
   {
     icon: RocketLaunch,
     title: "MVP builds",
-    body: "From idea to launched product. We scope it on an intro call first, then you get a fixed quote. No hourly fog.",
-    meta: "Fixed quote after intro call",
+    body: "From idea to launched product. We scope it in writing first, then you get a fixed quote. No hourly fog.",
+    meta: "Fixed quote after written brief",
     featured: false,
   },
 ] as const;
 
-export function Services() {
+export function ServicesSection() {
   return (
     <section id="services" className="scroll-mt-24 px-4 py-20 sm:px-6 md:min-h-[calc(100dvh-4rem)] md:py-28">
       <div className="mx-auto w-full max-w-7xl">

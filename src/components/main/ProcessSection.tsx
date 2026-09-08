@@ -3,8 +3,8 @@ import { Reveal } from "@/components/reveal";
 const STEPS = [
   {
     index: "01",
-    title: "Intro call",
-    body: "You describe the idea, I ask hard questions. Thirty minutes, free, no pitch deck required.",
+    title: "Written brief",
+    body: "Send one page: idea, links, budget range, timeline. Ack within 12 hours, questions and fixed quote within two business days. No calls needed.",
   },
   {
     index: "02",
@@ -18,7 +18,7 @@ const STEPS = [
   },
 ] as const;
 
-export function Process() {
+export function ProcessSection() {
   return (
     <section id="process" className="scroll-mt-24 px-4 py-20 sm:px-6 md:min-h-[calc(100dvh-4rem)] md:py-28">
       <div className="mx-auto w-full max-w-7xl">

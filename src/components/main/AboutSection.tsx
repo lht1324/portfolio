@@ -2,7 +2,7 @@ import Image from "next/image";
 import { SITE, STACK, TIMELINE } from "@/content/site";
 import { Reveal } from "@/components/reveal";
 
-export function About() {
+export function AboutSection() {
   return (
     <section id="about" className="scroll-mt-24 px-4 py-20 sm:px-6 md:min-h-[calc(100dvh-4rem)] md:py-28">
       <div className="mx-auto w-full max-w-7xl">
