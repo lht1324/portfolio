@@ -20,7 +20,7 @@ const STEPS = [
 
 export function Process() {
   return (
-    <section id="process" className="scroll-mt-24 px-4 py-20 sm:px-6 md:py-28">
+    <section id="process" className="scroll-mt-24 px-4 py-20 sm:px-6 md:flex md:min-h-[calc(100dvh-4rem)] md:flex-col md:justify-center md:py-28">
       <div className="mx-auto w-full max-w-7xl">
         <Reveal>
           <h2 className="max-w-xl text-3xl font-semibold tracking-tighter sm:text-4xl">
