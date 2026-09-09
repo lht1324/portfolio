@@ -71,12 +71,6 @@ export async function POST(request: Request) {
             error: `Email service not configured [${via}]. Email your brief directly to ${CONTACT_TO}.`,
         });
     }
-        return getNextBaseResponse({
-            success: false,
-            status: 500,
-            error: `Email service not configured. Email your brief directly to ${CONTACT_TO}.`,
-        });
-    }
 
     let form: FormData;
     try {
