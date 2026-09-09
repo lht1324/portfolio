@@ -12,7 +12,7 @@ const SERVICES = [
     title: "AI code rescue",
     body: "Your vibe-coded app works until it doesn't. I review AI-generated code, fix what's broken, and refactor it into a codebase you can maintain.",
     meta: "Code review · Refactoring · Bug fixes",
-    price: "Starting at $400",
+    price: "Starting at $500",
     featured: true,
   },
   {
@@ -28,7 +28,7 @@ const SERVICES = [
     title: "Payments and the hard parts",
     body: "Auth, billing, and subscriptions. The unglamorous work AI tools fumble, done carefully so you actually get paid.",
     meta: "Auth · Billing · Edge cases",
-    price: "Starting at $900",
+    price: "Starting at $1,000",
     featured: false,
   },
   {

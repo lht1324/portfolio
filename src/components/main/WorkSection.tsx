@@ -1,8 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { ArrowUpRightIcon, XIcon } from "@phosphor-icons/react";
-import { CTA_LABEL, MAILTO, PROJECTS, type Project } from "@/content/site";
+import { ArrowDownIcon, ArrowUpRightIcon, XIcon } from "@phosphor-icons/react";
+import { CTA_LABEL, PROJECTS, type Project } from "@/content/site";
 import { Reveal } from "@/components/reveal";
 
 function StackRow({ items }: { items: readonly string[] }) {
@@ -81,10 +81,12 @@ function ProjectModal({
         </p>
         <div className="mt-5 flex flex-col gap-3 sm:flex-row">
           <a
-            href={MAILTO}
-            className="flex h-11 items-center justify-center rounded-full bg-emerald-700 px-6 text-sm font-medium text-white transition-colors hover:bg-emerald-800 active:translate-y-[1px] dark:bg-emerald-400 dark:text-zinc-950 dark:hover:bg-emerald-300"
+            href="#contact"
+            onClick={onClose}
+            className="flex h-11 items-center justify-center gap-1.5 rounded-full bg-emerald-700 px-6 text-sm font-medium text-white transition-colors hover:bg-emerald-800 active:translate-y-[1px] dark:bg-emerald-400 dark:text-zinc-950 dark:hover:bg-emerald-300"
           >
             {CTA_LABEL}
+            <ArrowDownIcon size={16} />
           </a>
           <button
             type="button"

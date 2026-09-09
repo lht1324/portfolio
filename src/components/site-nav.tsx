@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { ListIcon, MoonIcon, SunIcon, XIcon } from "@phosphor-icons/react";
-import { CTA_LABEL, MAILTO, NAV_LINKS, SITE } from "@/content/site";
+import { CTA_LABEL, NAV_LINKS, SITE } from "@/content/site";
 import { useTheme } from "@/components/theme-provider";
 
 const SECTION_IDS = NAV_LINKS.map((link) => link.href.slice(1));
@@ -73,7 +73,7 @@ export function SiteNav() {
             {theme === "dark" ? <SunIcon size={17} /> : <MoonIcon size={17} />}
           </button>
           <a
-            href={MAILTO}
+            href="#contact"
             className="flex h-9 items-center rounded-full bg-emerald-700 px-4 text-sm font-medium text-white transition-colors hover:bg-emerald-800 active:translate-y-[1px] dark:bg-emerald-400 dark:text-zinc-950 dark:hover:bg-emerald-300"
           >
             {CTA_LABEL}
@@ -124,7 +124,8 @@ export function SiteNav() {
               );
             })}
             <a
-              href={MAILTO}
+              href="#contact"
+              onClick={() => setOpen(false)}
               className="mt-3 flex h-11 items-center justify-center rounded-full bg-emerald-700 text-sm font-medium text-white dark:bg-emerald-400 dark:text-zinc-950"
             >
               {CTA_LABEL}

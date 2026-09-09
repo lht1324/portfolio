@@ -1,64 +1,74 @@
-import {
-  EnvelopeSimpleIcon,
-  GithubLogoIcon,
-  LinkedinLogoIcon,
-  XLogoIcon,
-} from "@phosphor-icons/react/dist/ssr";
-import { CTA_LABEL, MAILTO, SITE } from "@/content/site";
-import { BriefFormMock } from "@/components/main/BriefFormMock";
+import { ArrowUpRightIcon, XLogoIcon } from "@phosphor-icons/react/dist/ssr";
+import { SITE } from "@/content/site";
+import { BriefForm } from "@/components/main/BriefForm";
+import { CopyEmailButton } from "@/components/main/CopyEmailButton";
 import { Reveal } from "@/components/reveal";
 
-const SOCIALS = [
-  { label: "GitHub", href: SITE.github, icon: GithubLogoIcon },
-  { label: "LinkedIn", href: SITE.linkedin, icon: LinkedinLogoIcon },
-  { label: "X", href: SITE.x, icon: XLogoIcon },
-] as const;
+const SOCIALS = [{ label: "X", href: SITE.x, icon: XLogoIcon }] as const;
 
 export function ContactSection() {
   return (
-    <section id="contact" className="scroll-mt-24 px-4 py-16 sm:px-6 md:py-24">
-      <div className="mx-auto w-full max-w-3xl text-center">
+    <section id="contact" className="scroll-mt-24 px-4 py-16 sm:px-6 md:flex md:min-h-[calc(100dvh-4rem)] md:flex-col md:justify-center md:py-24">
+      <div className="mx-auto w-full max-w-7xl">
         <Reveal>
-          <h2 className="text-3xl font-semibold tracking-tighter sm:text-4xl">
-            Have something AI-adjacent to build?
-          </h2>
-          <p className="mx-auto mt-4 max-w-[52ch] leading-relaxed text-zinc-600 dark:text-zinc-400">
-            Send a brief: what you&apos;re making, relevant links, budget range,
-            timeline. Ack within 12 hours, full reply within two business
-            days.
-          </p>
-          <div className="mt-8 flex flex-col items-center gap-4">
-            <a
-              href={MAILTO}
-              className="flex h-12 items-center rounded-full bg-emerald-700 px-8 text-sm font-medium text-white transition-colors hover:bg-emerald-800 active:translate-y-[1px] dark:bg-emerald-400 dark:text-zinc-950 dark:hover:bg-emerald-300"
-            >
-              {CTA_LABEL}
-            </a>
-            <a
-              href={MAILTO}
-              className="flex items-center gap-2 font-mono text-sm text-zinc-600 transition-colors hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-white"
-            >
-              <EnvelopeSimpleIcon size={16} />
-              {SITE.email}
-            </a>
-          </div>
-          <ul className="mt-8 flex items-center justify-center gap-3">
-            {SOCIALS.map((social) => (
-              <li key={social.label}>
-                <a
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={`${SITE.name} on ${social.label}`}
-                  className="flex h-10 w-10 items-center justify-center rounded-full border border-zinc-300 text-zinc-600 transition-colors hover:border-zinc-500 hover:text-zinc-950 active:scale-[0.98] dark:border-white/15 dark:text-zinc-300 dark:hover:border-white/40 dark:hover:text-white"
-                >
-                  <social.icon size={18} />
-                </a>
-              </li>
-            ))}
-          </ul>
-          <div className="mx-auto mt-12 w-full max-w-2xl text-left">
-            <BriefFormMock />
+          <div className="grid gap-10 lg:grid-cols-[1fr_1.15fr] lg:gap-14">
+            <div>
+              <div>
+              <h2 className="text-3xl font-semibold tracking-tighter sm:text-4xl">
+                Have something AI-adjacent to build?
+              </h2>
+              <p className="mt-4 max-w-[52ch] leading-relaxed text-zinc-600 dark:text-zinc-400">
+                Send a brief: what you&apos;re making, plus whatever shows
+                it. Links, screenshots, a Notion page, plain words. All
+                welcome.
+              </p>
+              </div>
+              <dl className="mt-10 border-t border-zinc-200 dark:border-white/10">
+                <div className="grid grid-cols-[104px_1fr] items-center gap-4 border-b border-zinc-200 py-4 dark:border-white/10">
+                  <dt className="font-mono text-xs uppercase tracking-[0.14em] text-zinc-500 dark:text-zinc-400">
+                    Email
+                  </dt>
+                  <dd>
+                    <CopyEmailButton email={SITE.email} />
+                  </dd>
+                </div>
+                <div className="grid grid-cols-[104px_1fr] items-center gap-4 border-b border-zinc-200 py-4 dark:border-white/10">
+                  <dt className="flex items-center font-mono text-xs uppercase tracking-[0.14em] text-zinc-500 dark:text-zinc-400">
+                    <XLogoIcon size={15} aria-label="X" />
+                  </dt>
+                  <dd>
+                    <a
+                      href={SITE.x}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 font-mono text-sm text-zinc-600 underline decoration-zinc-300 underline-offset-4 transition-colors hover:text-zinc-950 hover:decoration-zinc-500 dark:text-zinc-400 dark:decoration-white/20 dark:hover:text-white dark:hover:decoration-white/50"
+                    >
+                      @jaeholeeeee
+                      <ArrowUpRightIcon size={14} />
+                    </a>
+                  </dd>
+                </div>
+                <div className="grid grid-cols-[104px_1fr] items-center gap-4 border-b border-zinc-200 py-4 dark:border-white/10">
+                  <dt className="font-mono text-xs uppercase tracking-[0.14em] text-zinc-500 dark:text-zinc-400">
+                    Based in
+                  </dt>
+                  <dd className="text-sm text-zinc-600 dark:text-zinc-400">
+                    {SITE.location} · KST (UTC+9)
+                  </dd>
+                </div>
+                <div className="grid grid-cols-[104px_1fr] items-center gap-4 border-b border-zinc-200 py-4 dark:border-white/10">
+                  <dt className="font-mono text-xs uppercase tracking-[0.14em] text-zinc-500 dark:text-zinc-400">
+                    Response
+                  </dt>
+                  <dd className="text-sm text-zinc-600 dark:text-zinc-400">
+                    Ack within 12 hours, full reply within two business days
+                  </dd>
+                </div>
+              </dl>
+            </div>
+            <div className="w-full text-left">
+              <BriefForm />
+            </div>
           </div>
         </Reveal>
       </div>

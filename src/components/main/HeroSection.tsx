@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { ArrowRightIcon } from "@phosphor-icons/react/dist/ssr";
-import { CTA_LABEL, MAILTO, SITE } from "@/content/site";
+import { CTA_LABEL, SITE } from "@/content/site";
 import { Reveal } from "@/components/reveal";
 
 export function HeroSection() {
@@ -27,7 +27,7 @@ export function HeroSection() {
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
             <a
-              href={MAILTO}
+              href="#contact"
               className="flex h-12 items-center justify-center rounded-full bg-emerald-700 px-7 text-sm font-medium text-white transition-colors hover:bg-emerald-800 active:translate-y-[1px] sm:w-auto dark:bg-emerald-400 dark:text-zinc-950 dark:hover:bg-emerald-300"
             >
               {CTA_LABEL}
