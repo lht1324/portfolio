@@ -48,22 +48,29 @@ function escapeHtml(value: string) {
     return value.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 }
 
-async function getApiKey(): Promise<string | undefined> {
+async function getApiKey(): Promise<{ key: string | undefined; via: string }> {
     if (process.env.RESEND_API_KEY) {
-        return process.env.RESEND_API_KEY;
+        return { key: process.env.RESEND_API_KEY, via: "process.env" };
     }
     try {
         const context = await getCloudflareContext({ async: true });
         const env = context.env as unknown as Record<string, string | undefined>;
-        return env.RESEND_API_KEY;
+        return { key: env.RESEND_API_KEY, via: `cf-env:${"RESEND_API_KEY" in env ? "present" : "absent"}` };
     } catch {
-        return undefined;
+        return { key: undefined, via: "cf-throw" };
     }
 }
 
 export async function POST(request: Request) {
-    const apiKey = await getApiKey();
+    const { key: apiKey, via } = await getApiKey();
     if (!apiKey) {
+        return getNextBaseResponse({
+            success: false,
+            status: 500,
+            // TEMP-DEBUG: which lookup path failed. No values exposed. Revert after fix.
+            error: `Email service not configured [${via}]. Email your brief directly to ${CONTACT_TO}.`,
+        });
+    }
         return getNextBaseResponse({
             success: false,
             status: 500,
