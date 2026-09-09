@@ -1,46 +1,48 @@
 import {
-  CreditCard,
-  FilmStrip,
-  RocketLaunch,
-  Wrench,
+  CreditCardIcon,
+  FilmStripIcon,
+  RocketLaunchIcon,
+  WrenchIcon,
 } from "@phosphor-icons/react/dist/ssr";
 import { Reveal } from "@/components/reveal";
 
 const SERVICES = [
   {
-    icon: Wrench,
+    icon: WrenchIcon,
     title: "AI code rescue",
     body: "Your vibe-coded app works until it doesn't. I review AI-generated code, fix what's broken, and refactor it into a codebase you can maintain.",
     meta: "Code review · Refactoring · Bug fixes",
-    price: "Starting at $400",
+    price: "Starting at $500",
     featured: true,
   },
   {
-    icon: FilmStrip,
+    icon: FilmStripIcon,
     title: "AI media pipelines",
     body: "Video and image generation with Replicate and fal.ai. Queues, webhooks, caching, and cost control, wired correctly from day one.",
     meta: "Replicate · fal.ai · Webhooks",
+    price: "Starting at $1,500",
     featured: false,
   },
   {
-    icon: CreditCard,
+    icon: CreditCardIcon,
     title: "Payments and the hard parts",
     body: "Auth, billing, and subscriptions. The unglamorous work AI tools fumble, done carefully so you actually get paid.",
     meta: "Auth · Billing · Edge cases",
+    price: "Starting at $1,000",
     featured: false,
   },
   {
-    icon: RocketLaunch,
+    icon: RocketLaunchIcon,
     title: "MVP builds",
-    body: "From idea to launched product. We scope it on an intro call first, then you get a fixed quote. No hourly fog.",
-    meta: "Fixed quote after intro call",
+    body: "From idea to launched product. I scope it in writing first, then you get a fixed quote. No hourly fog.",
+    meta: "Fixed quote after written brief",
     featured: false,
   },
 ] as const;
 
-export function Services() {
+export function ServicesSection() {
   return (
-    <section id="services" className="scroll-mt-24 px-4 py-20 sm:px-6 md:py-28">
+    <section id="services" className="scroll-mt-24 px-4 py-20 sm:px-6 md:min-h-[calc(100dvh-4rem)] md:py-28">
       <div className="mx-auto w-full max-w-7xl">
         <Reveal>
           <h2 className="max-w-xl text-3xl font-semibold tracking-tighter sm:text-4xl">

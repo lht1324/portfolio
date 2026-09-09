@@ -1,11 +1,11 @@
 import Image from "next/image";
-import { ArrowRight } from "@phosphor-icons/react/dist/ssr";
-import { CTA_LABEL, MAILTO, SITE } from "@/content/site";
+import { ArrowRightIcon } from "@phosphor-icons/react/dist/ssr";
+import { CTA_LABEL, SITE } from "@/content/site";
 import { Reveal } from "@/components/reveal";
 
-export function Hero() {
+export function HeroSection() {
   return (
-    <section id="top" className="scroll-mt-24 px-4 pt-24 sm:px-6">
+    <section id="top" className="scroll-mt-24 px-4 pt-24 sm:px-6 md:flex md:min-h-[calc(100dvh-4rem)] md:flex-col md:justify-center md:py-16">
       <div className="mx-auto grid w-full max-w-7xl items-center gap-10 lg:grid-cols-12 lg:gap-14">
         <Reveal className="lg:col-span-7">
           <p className="inline-flex items-center gap-2.5 rounded-full border border-zinc-200 py-1.5 pl-3 pr-4 text-xs text-zinc-600 dark:border-white/15 dark:text-zinc-300">
@@ -27,7 +27,7 @@ export function Hero() {
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
             <a
-              href={MAILTO}
+              href="#contact"
               className="flex h-12 items-center justify-center rounded-full bg-emerald-700 px-7 text-sm font-medium text-white transition-colors hover:bg-emerald-800 active:translate-y-[1px] sm:w-auto dark:bg-emerald-400 dark:text-zinc-950 dark:hover:bg-emerald-300"
             >
               {CTA_LABEL}
@@ -37,7 +37,7 @@ export function Hero() {
               className="group flex h-12 items-center justify-center gap-1.5 rounded-full border border-zinc-300 px-7 text-sm font-medium transition-colors hover:border-zinc-500 active:translate-y-[1px] dark:border-white/20 dark:hover:border-white/50"
             >
               See selected work
-              <ArrowRight
+              <ArrowRightIcon
                 size={16}
                 className="transition-transform group-hover:translate-x-0.5"
               />
@@ -51,14 +51,24 @@ export function Hero() {
               aria-hidden
               className="bg-grid absolute -inset-3 rounded-[20px] text-zinc-900 dark:text-white"
             />
-            <Image
-              src="/pfp.jpg"
-              alt={`Portrait of ${SITE.name}`}
-              width={640}
-              height={640}
-              priority
-              className="relative aspect-square w-full rounded-2xl border border-zinc-200 object-cover object-top dark:border-white/15"
-            />
+            <a
+              href="/pfp.jpg"
+              target="_blank"
+              rel="noreferrer"
+              aria-label={`Open full-resolution portrait of ${SITE.name} in a new tab`}
+              title="Open full-resolution portrait"
+              className="relative block cursor-zoom-in"
+            >
+              <Image
+                src="/pfp.webp"
+                alt={`Portrait of ${SITE.name}`}
+                width={640}
+                height={640}
+                priority
+                sizes="(max-width: 1023px) 90vw, 480px"
+                className="relative aspect-square w-full rounded-2xl border border-zinc-200 object-cover object-top dark:border-white/15"
+              />
+            </a>
             <figcaption className="relative mt-3 font-mono text-xs text-zinc-500 dark:text-zinc-400">
               {SITE.name}
             </figcaption>

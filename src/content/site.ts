@@ -11,16 +11,17 @@ export const SITE = {
 } as const;
 
 export const MAILTO = `mailto:${SITE.email}?subject=${encodeURIComponent(
-  "Intro call: my project in one line",
+  "Project brief: my project in one line",
 )}`;
 
-export const CTA_LABEL = "Book an intro call";
+export const CTA_LABEL = "Send your brief";
 
 export const NAV_LINKS = [
   { label: "Work", href: "#work" },
   { label: "Services", href: "#services" },
   { label: "About", href: "#about" },
   { label: "Process", href: "#process" },
+  { label: "Contact", href: "#contact" },
 ] as const;
 
 export const STACK = [
@@ -52,7 +53,7 @@ export const PROJECTS: readonly Project[] = [
     displayUrl: "shortreal.ai",
   },
   {
-    name: "TailorAd",
+    name: "TailoredAd",
     status: "Launching soon",
     description:
       "AI still-image ad creative studio. Product photos in, scroll-stopping ad stills out, tuned for paid social.",
@@ -71,7 +72,7 @@ export const TIMELINE = [
   {
     period: "2021 to 2023",
     title: "Developer, AutoCrypt",
-    detail: "Android and web development.",
+    detail: "Android and web development · automotive cybersecurity.",
   },
   {
     period: "2018 to 2025",

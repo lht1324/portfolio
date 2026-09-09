@@ -2,9 +2,9 @@ import Image from "next/image";
 import { SITE, STACK, TIMELINE } from "@/content/site";
 import { Reveal } from "@/components/reveal";
 
-export function About() {
+export function AboutSection() {
   return (
-    <section id="about" className="scroll-mt-24 px-4 py-20 sm:px-6 md:py-28">
+    <section id="about" className="scroll-mt-24 px-4 py-20 sm:px-6 md:min-h-[calc(100dvh-4rem)] md:py-28">
       <div className="mx-auto w-full max-w-7xl">
         <Reveal>
           <h2 className="max-w-xl text-3xl font-semibold tracking-tighter sm:text-4xl">
@@ -14,14 +14,24 @@ export function About() {
 
         <div className="mt-10 grid gap-10 lg:grid-cols-12 lg:gap-14">
           <Reveal className="lg:col-span-5">
-            <Image
-              src="/pfp.jpg"
-              alt={`Portrait of ${SITE.name}`}
+            <a
+              href="/pfp.jpg"
+              target="_blank"
+              rel="noreferrer"
+              aria-label={`Open full-resolution portrait of ${SITE.name} in a new tab`}
+              title="Open full-resolution portrait"
+              className="block cursor-zoom-in"
+            >
+              <Image
+                src="/pfp.webp"
+                alt={`Portrait of ${SITE.name}`}
               width={640}
-              height={640}
+              height={800}
               loading="lazy"
+              sizes="(max-width: 1023px) 90vw, 480px"
               className="aspect-[4/5] w-full rounded-2xl border border-zinc-200 object-cover dark:border-white/15"
-            />
+              />
+            </a>
           </Reveal>
 
           <div className="lg:col-span-7">

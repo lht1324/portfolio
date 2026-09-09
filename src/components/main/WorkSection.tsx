@@ -1,8 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { ArrowUpRight, X } from "@phosphor-icons/react";
-import { CTA_LABEL, MAILTO, PROJECTS, type Project } from "@/content/site";
+import { ArrowDownIcon, ArrowUpRightIcon, XIcon } from "@phosphor-icons/react";
+import { CTA_LABEL, PROJECTS, type Project } from "@/content/site";
 import { Reveal } from "@/components/reveal";
 
 function StackRow({ items }: { items: readonly string[] }) {
@@ -61,7 +61,7 @@ function ProjectModal({
           aria-label="Close dialog"
           className="absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-full border border-zinc-200 text-zinc-500 transition-colors hover:text-zinc-900 dark:border-white/15 dark:text-zinc-400 dark:hover:text-white"
         >
-          <X size={17} />
+          <XIcon size={17} />
         </button>
         <p className="font-mono text-xs text-emerald-800 dark:text-emerald-300">
           {project.status}
@@ -81,10 +81,12 @@ function ProjectModal({
         </p>
         <div className="mt-5 flex flex-col gap-3 sm:flex-row">
           <a
-            href={MAILTO}
-            className="flex h-11 items-center justify-center rounded-full bg-emerald-700 px-6 text-sm font-medium text-white transition-colors hover:bg-emerald-800 active:translate-y-[1px] dark:bg-emerald-400 dark:text-zinc-950 dark:hover:bg-emerald-300"
+            href="#contact"
+            onClick={onClose}
+            className="flex h-11 items-center justify-center gap-1.5 rounded-full bg-emerald-700 px-6 text-sm font-medium text-white transition-colors hover:bg-emerald-800 active:translate-y-[1px] dark:bg-emerald-400 dark:text-zinc-950 dark:hover:bg-emerald-300"
           >
             {CTA_LABEL}
+            <ArrowDownIcon size={16} />
           </a>
           <button
             type="button"
@@ -99,11 +101,11 @@ function ProjectModal({
   );
 }
 
-export function Work() {
+export function WorkSection() {
   const [selected, setSelected] = useState<Project | null>(null);
 
   return (
-    <section id="work" className="scroll-mt-24 px-4 py-20 sm:px-6 md:py-28">
+    <section id="work" className="scroll-mt-24 px-4 py-20 sm:px-6 md:-mt-[10dvh] md:min-h-[calc(100dvh-4rem)] md:py-28">
       <div className="mx-auto w-full max-w-7xl">
         <Reveal>
           <h2 className="max-w-xl text-3xl font-semibold tracking-tighter sm:text-4xl">
@@ -146,7 +148,7 @@ export function Work() {
                     >
                       <span className="flex items-center justify-between font-mono text-xs opacity-70">
                         <span>Live site</span>
-                        <ArrowUpRight
+                        <ArrowUpRightIcon
                           size={20}
                           className="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
                         />
@@ -165,7 +167,7 @@ export function Work() {
                     >
                       <span className="flex items-center justify-between font-mono text-xs opacity-70">
                         <span>{project.status}</span>
-                        <ArrowUpRight
+                        <ArrowUpRightIcon
                           size={20}
                           className="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
                         />
