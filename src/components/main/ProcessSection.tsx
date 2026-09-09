@@ -5,7 +5,7 @@ const STEPS = [
         index: "01",
         title: "Written brief",
         points: [
-            "What you are making, plus whatever shows it",
+            "What you're making, plus whatever shows it",
             "Ack within 12 hours, questions welcome anytime",
             "Fixed quote within two business days, no calls needed",
         ],
@@ -16,13 +16,19 @@ const STEPS = [
         points: [
             "Scope, timeline, and one locked price in writing",
             "Half upfront via Wise, half on handoff",
+            "Two revision rounds, batched in writing. New scope quoted separately",
             "If the fit is wrong, decline in writing",
         ],
     },
     {
         index: "03",
         title: "Build and handoff",
-        points: ["Demos on longer builds, from a clean repo", "Docs included for handoff", "You own all of it at handoff"],
+        points: [
+            "Demos on longer builds, from a clean repo",
+            "Docs included for handoff",
+            "30 days of free fixes for delivered work after handoff",
+            "You own all of it at handoff",
+        ],
     },
 ] as const;
 

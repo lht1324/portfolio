@@ -5,7 +5,7 @@ import { useCallback, useEffect, useState, type ChangeEvent, type DragEvent, typ
 import { PaperclipIcon, XIcon } from "@phosphor-icons/react";
 import { CTA_LABEL } from "@/content/site";
 
-const SERVICE_OPTIONS = ["AI code rescue", "AI media pipeline", "Payments and billing", "MVP build"] as const;
+const SERVICE_OPTIONS = ["AI code rescue", "AI media pipelines", "Payments and the hard parts", "MVP builds"] as const;
 
 const MAX_FILES = 3;
 const MAX_FILE_BYTES = 10 * 1024 * 1024;

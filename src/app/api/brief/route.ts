@@ -5,7 +5,7 @@ import { getNextBaseResponse } from "@/lib/utils/getNextBaseResponse";
 const CONTACT_TO = "contact@jaeholee.xyz";
 const BRIEF_FROM = "Portfolio Brief <brief@jaeholee.xyz>";
 
-const SERVICE_OPTIONS = ["AI code rescue", "AI media pipeline", "Payments and billing", "MVP build"] as const;
+const SERVICE_OPTIONS = ["AI code rescue", "AI media pipelines", "Payments and the hard parts", "MVP builds"] as const;
 
 const MAX_FILES = 3;
 const MAX_FILE_BYTES = 10 * 1024 * 1024;
@@ -48,27 +48,26 @@ function escapeHtml(value: string) {
     return value.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 }
 
-async function getApiKey(): Promise<{ key: string | undefined; via: string }> {
+async function getApiKey(): Promise<string | undefined> {
     if (process.env.RESEND_API_KEY) {
-        return { key: process.env.RESEND_API_KEY, via: "process.env" };
+        return process.env.RESEND_API_KEY;
     }
     try {
         const context = await getCloudflareContext({ async: true });
         const env = context.env as unknown as Record<string, string | undefined>;
-        return { key: env.RESEND_API_KEY, via: `cf-env:${"RESEND_API_KEY" in env ? "present" : "absent"}` };
+        return env.RESEND_API_KEY;
     } catch {
-        return { key: undefined, via: "cf-throw" };
+        return undefined;
     }
 }
 
 export async function POST(request: Request) {
-    const { key: apiKey, via } = await getApiKey();
+    const apiKey = await getApiKey();
     if (!apiKey) {
         return getNextBaseResponse({
             success: false,
             status: 500,
-            // TEMP-DEBUG: which lookup path failed. No values exposed. Revert after fix.
-            error: `Email service not configured [${via}]. Email your brief directly to ${CONTACT_TO}.`,
+            error: `Email service not configured. Email your brief directly to ${CONTACT_TO}.`,
         });
     }
 

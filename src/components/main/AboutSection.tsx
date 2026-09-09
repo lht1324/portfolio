@@ -42,7 +42,7 @@ export function AboutSection() {
                 build AI products full time.
               </p>
               <p className="mt-4 max-w-[60ch] leading-relaxed text-zinc-600 dark:text-zinc-400">
-                My work lives where AI demos meet production reality: media
+                My work sits between AI demos and production reality: media
                 pipelines, billing, and code that survives contact with real
                 users.
               </p>
