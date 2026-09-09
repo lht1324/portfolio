@@ -1,4 +1,5 @@
 import { Resend } from "resend";
+import { getCloudflareContext } from "@opennextjs/cloudflare";
 import { getNextBaseResponse } from "@/lib/utils/getNextBaseResponse";
 
 const CONTACT_TO = "contact@jaeholee.xyz";
@@ -47,8 +48,21 @@ function escapeHtml(value: string) {
     return value.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 }
 
+async function getApiKey(): Promise<string | undefined> {
+    if (process.env.RESEND_API_KEY) {
+        return process.env.RESEND_API_KEY;
+    }
+    try {
+        const context = await getCloudflareContext({ async: true });
+        const env = context.env as unknown as Record<string, string | undefined>;
+        return env.RESEND_API_KEY;
+    } catch {
+        return undefined;
+    }
+}
+
 export async function POST(request: Request) {
-    const apiKey = process.env.RESEND_API_KEY;
+    const apiKey = await getApiKey();
     if (!apiKey) {
         return getNextBaseResponse({
             success: false,
